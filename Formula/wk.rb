@@ -1,17 +1,17 @@
 class Wk < Formula
   desc "Warm git worktrees for parallel agents, and cleanup of finished ones"
   homepage "https://github.com/zach-short/wk"
-  version "0.1.3"
+  version "0.1.4"
 
   depends_on :macos
 
   on_arm do
-    url "https://github.com/zach-short/wk/releases/download/v0.1.3/wk_0.1.3_darwin_arm64.tar.gz"
-    sha256 "98bd83d959af14c7be11adac8e6a5635b9dcf442b446ca271d589f56aa684832"
+    url "https://github.com/zach-short/wk/releases/download/v0.1.4/wk_0.1.4_darwin_arm64.tar.gz"
+    sha256 "110dcbb522290e65dd7be5e7c550ca2d25a69e03635c1d15d612d689a093e725"
   end
   on_intel do
-    url "https://github.com/zach-short/wk/releases/download/v0.1.3/wk_0.1.3_darwin_amd64.tar.gz"
-    sha256 "2f6d4e262e94ceb7071e3f3eb1320e8b0d53f3b2ef95a245e7f5aa74f9e27988"
+    url "https://github.com/zach-short/wk/releases/download/v0.1.4/wk_0.1.4_darwin_amd64.tar.gz"
+    sha256 "0217190e4d03ff3d071f15aa970e3b588f7a5d57ce22f7dbc5f3f8dcb99a7277"
   end
 
   def install

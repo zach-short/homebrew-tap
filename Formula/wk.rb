@@ -1,16 +1,21 @@
 class Wk < Formula
   desc "Warm git worktrees for parallel agents, and cleanup of finished ones"
   homepage "https://github.com/zach-short/wk"
-  url "https://github.com/zach-short/wk/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "8f8b60ea12b0f9d0af56bf596ad684bb537bd8a78523e78032ac8ee890241bdd"
-  head "https://github.com/zach-short/wk.git", branch: "main"
+  version "0.1.0"
 
-  depends_on "go" => :build
   depends_on :macos
 
+  on_arm do
+    url "https://github.com/zach-short/wk/releases/download/v0.1.0/wk_0.1.0_darwin_arm64.tar.gz"
+    sha256 "4d7bed089cbc3be98f0df5421a80ac3815b5124f8ade138b7a8ddad002270a89"
+  end
+  on_intel do
+    url "https://github.com/zach-short/wk/releases/download/v0.1.0/wk_0.1.0_darwin_amd64.tar.gz"
+    sha256 "36cc0cb95ca491943b38157bb25b6b23acb325c991203ea81a81a699b4ca6963"
+  end
+
   def install
-    ENV["GOTOOLCHAIN"] = "local"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/wk"
+    bin.install "wk"
   end
 
   test do
